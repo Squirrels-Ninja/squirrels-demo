@@ -16,6 +16,7 @@ Test each item on desktop (1440px) and mobile (375px) unless noted.
 - [ ] Header logo visible and links to homepage
 - [ ] Primary navigation renders — all menu items visible and linked
 - [ ] Footer renders — copyright text, links functional
+- [ ] Footer shows demo notice: "This is a demonstration store. No real orders are processed."
 - [ ] "Add to Cart" buttons on any featured products work
 - [ ] Page is responsive at 375px — no horizontal scroll
 

@@ -261,7 +261,7 @@ ok "Primary Navigation assigned to primary location"
 section "Customizer settings"
 
 wp option update theme_mods_squirrels \
-  '{"squirrels_primary_color":"#C94F10","squirrels_accent_color":"#B91C1C","squirrels_body_font_size":"16","squirrels_sidebar_position":"right","squirrels_footer_text":"© 2026 Squirrels Demo Store. Built with <a href=\"https://squirrels.ninja\">Squirrels<\/a>."}'
+  '{"squirrels_primary_color":"#C94F10","squirrels_accent_color":"#B91C1C","squirrels_body_font_size":"16","squirrels_sidebar_position":"right","squirrels_footer_text":"© 2026 Squirrels Demo Store. Built with <a href=\"https://squirrels.ninja\">Squirrels<\/a>. &nbsp;·&nbsp; This is a demonstration store. No real orders are processed."}'
 ok "Customizer: brand colors and footer text set"
 
 # ============================================================

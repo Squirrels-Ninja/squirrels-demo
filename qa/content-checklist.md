@@ -74,6 +74,7 @@ Verify that the visual design is correct and consistent across the demo site.
 ## Footer
 
 - [ ] Footer renders with correct copyright text
+- [ ] Footer shows demo notice: "This is a demonstration store. No real orders are processed."
 - [ ] Footer links (if any) are functional
 - [ ] No "Proudly powered by WordPress" default text unless intentional
 - [ ] Footer background and text colors are consistent with the design
