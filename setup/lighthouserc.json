@@ -41,6 +41,7 @@
         "largest-contentful-paint":   ["warn",  {"maxNumericValue": 3500}],
         "total-blocking-time":        ["warn",  {"maxNumericValue": 500}],
         "cumulative-layout-shift":    ["warn",  {"maxNumericValue": 0.1}],
+        "interaction-to-next-paint":  ["warn",  {"maxNumericValue": 500}],
         "interactive":                ["warn",  {"maxNumericValue": 4000}],
 
         "uses-responsive-images":     ["warn",  {}],

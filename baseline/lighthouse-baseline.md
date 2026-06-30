@@ -42,6 +42,7 @@ npx lighthouse https://demo.squirrels.ninja \
 | SEO | | |
 | FCP (First Contentful Paint) | | |
 | LCP (Largest Contentful Paint) | | |
+| INP (Interaction to Next Paint) | | |
 | TBT (Total Blocking Time) | | |
 | CLS (Cumulative Layout Shift) | | |
 | TTI (Time to Interactive) | | |
@@ -59,6 +60,7 @@ npx lighthouse https://demo.squirrels.ninja \
 | SEO | | |
 | FCP | | |
 | LCP | | |
+| INP | | |
 | TBT | | |
 | CLS | | |
 | TTI | | |
@@ -75,6 +77,7 @@ npx lighthouse https://demo.squirrels.ninja \
 | SEO | | |
 | FCP | | |
 | LCP | | |
+| INP | | |
 | TBT | | |
 | CLS | | |
 | TTI | | |
@@ -89,6 +92,7 @@ npx lighthouse https://demo.squirrels.ninja \
 | Accessibility | | |
 | FCP | | |
 | LCP | | |
+| INP | | |
 | TBT | | |
 
 ---
@@ -101,6 +105,7 @@ npx lighthouse https://demo.squirrels.ninja \
 | Accessibility | | |
 | FCP | | |
 | LCP | | |
+| INP | | |
 | TBT | | |
 
 ---
@@ -113,6 +118,7 @@ npx lighthouse https://demo.squirrels.ninja \
 | Accessibility | | |
 | FCP | | |
 | LCP | | |
+| INP | | |
 | TBT | | |
 
 ---
@@ -136,6 +142,7 @@ After recording the baseline, set improvement targets for T7 (Scamper):
 |--------|---------|-----------|
 | Homepage Performance | | ≥90 |
 | Homepage LCP | | <2.5s |
+| Homepage INP | | <200ms |
 | Homepage TBT | | <200ms |
 | Homepage CLS | | <0.05 |
 | Shop Performance | | ≥85 |
