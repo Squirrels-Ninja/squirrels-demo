@@ -165,17 +165,41 @@
 
 ---
 
-## T7.3–T7.7 — Optimization Log
+## T7.2.5 — Asset Inventory
 
-Document each change as it is made.
+Complete after recording baseline. Measure in Chrome DevTools → Network (no cache, slow 3G) per page type.
+
+| Asset | Raw size | Gzip size | Loads on | Conditional? | Deferrable? | Decision |
+|-------|----------|-----------|----------|--------------|-------------|----------|
+| `main.css` | 18.5KB | | All pages | No | No | Keep; merge tokens into it |
+| `brand-tokens.css` | 13.8KB | | **Nowhere** | No | — | Merge `:root` block into `main.css`; archive file |
+| `style.css` (root) | ~0.5KB | | All pages | No | No | Keep (WP theme requirement) |
+| `main.js` | 406B | | All pages | No | Yes (footer) | Remove jQuery dep; vanilla menu toggle |
+| `jquery.js` (WP bundled) | ~87KB | | All pages | No | No | Remove theme dep; WC loads it on shop pages anyway |
+| `demo-import.css` | 1.5KB | | Admin only | Yes | — | Already conditional; keep |
+| `demo-import.js` | 1.6KB | | Admin only | Yes | — | Already conditional; keep |
+| WooCommerce CSS | | | | | | Measure on live site; add `squirrels_is_woocommerce_page()` gate |
+| `wc-cart-fragments.js` | | | All pages | No | — | Gate on `is_cart() \|\| is_checkout()` if no header cart count |
+| **Total CSS** | | | | | | |
+| **Total JS** | | | | | | |
+
+**Brand token decision (choose before T7.3):**  
+- [ ] Path A — inline `:root` block via `wp_head`  
+- [ ] Path B — merge `:root` block into `main.css`, archive `brand-tokens.css`
+
+---
+
+## T7.3–T7.8 — Optimization Log
+
+Document each change as it is made (in recommended execution order).
 
 | Date | T7 task | File(s) changed | Description | Impact |
 |------|---------|----------------|-------------|--------|
-| | T7.3 | | | |
-| | T7.4 | | | |
-| | T7.5 | | | |
-| | T7.6 | | | |
-| | T7.7 | | | |
+| | T7.4 (jQuery) | | | |
+| | T7.7 (Fonts) | | | |
+| | T7.3 (CSS/tokens) | | | |
+| | T7.5 (WooCommerce) | | | |
+| | T7.6 (Images) | | | |
 
 ---
 
