@@ -12,7 +12,7 @@
 #
 # Usage:
 #   cd /path/to/wordpress-root
-#   bash /path/to/install.sh
+#   bash /path/to/install.sh | tee /tmp/squirrels-install.log
 # =============================================================================
 
 set -euo pipefail
@@ -59,6 +59,15 @@ wp --info | grep "WP-CLI version"
 [[ -z "$PRODUCTS_CSV" ]] && { echo "  ✗ Set PRODUCTS_CSV in the CONFIG section"; exit 1; }
 [[ -f "$THEME_ZIP" ]]    || { echo "  ✗ THEME_ZIP not found: $THEME_ZIP"; exit 1; }
 [[ -f "$PRODUCTS_CSV" ]] || { echo "  ✗ PRODUCTS_CSV not found: $PRODUCTS_CSV"; exit 1; }
+
+# ============================================================
+# Pre-run backup — snapshot the clean WordPress install
+# so the installer can be re-run cleanly if anything fails.
+# ============================================================
+BACKUP_FILE="/tmp/wordpress-clean-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
+echo "  Creating pre-run backup → $BACKUP_FILE"
+tar -czf "$BACKUP_FILE" . 2>/dev/null && ok "Backup created: $BACKUP_FILE" \
+  || echo "  ⚠ Backup failed (non-fatal — continuing)"
 
 # Generate a secure admin password and show it once at the end
 ADMIN_PASS="$(openssl rand -base64 18 | tr -d '/+=' | head -c 20)"
